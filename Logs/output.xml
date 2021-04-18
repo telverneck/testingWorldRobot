@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0 (Python 3.9.4 on win32)" generated="20210418 16:03:09.673" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\RobotUdemy\Tests">
+<suite id="s1-s1" name="TC001 New users" source="C:\RobotUdemy\Tests\TC001_New_users.robot">
+<test id="s1-s1-t1" name="Scenario1: Register a new user">
+<kw name="Start Session" library="Hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210418 16:03:10.207" level="INFO">Opening browser 'Headless Chrome' to base url 'http://www.thetestingworld.com/testings'.</msg>
+<status status="PASS" starttime="20210418 16:03:10.206" endtime="20210418 16:03:17.037"/>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<arg>${WIDTH}</arg>
+<arg>${HEIGHT}</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20210418 16:03:17.037" endtime="20210418 16:03:17.144"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20210418 16:03:17.145" endtime="20210418 16:03:17.146"/>
+</kw>
+<status status="PASS" starttime="20210418 16:03:10.206" endtime="20210418 16:03:17.147"/>
+</kw>
+<kw name="Given that I am on &quot;testings&quot; page" library="firstPage" sourcename="Given that I am on &quot;${page}&quot; page">
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20210418 16:03:17.152" level="INFO">${url} = https://www.thetestingworld.com/testings/</msg>
+<status status="PASS" starttime="20210418 16:03:17.147" endtime="20210418 16:03:17.152"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${url}</arg>
+<arg>${page}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20210418 16:03:17.152" endtime="20210418 16:03:17.153"/>
+</kw>
+<status status="PASS" starttime="20210418 16:03:17.147" endtime="20210418 16:03:17.153"/>
+</kw>
+<kw name="And I check the title &quot;Login &amp; Sign Up Forms&quot;" library="firstPage" sourcename="And I check the title &quot;${pageTitle}&quot;">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${pageTitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210418 16:03:17.158" level="INFO">Page title is 'Login &amp; Sign Up Forms'.</msg>
+<status status="PASS" starttime="20210418 16:03:17.154" endtime="20210418 16:03:17.158"/>
+</kw>
+<status status="PASS" starttime="20210418 16:03:17.153" endtime="20210418 16:03:17.158"/>
+</kw>
+<kw name="And I have random data" library="firstPage">
+<kw name="First Name" library="FakerLibrary">
+<var>${FAKERNAME}</var>
+<msg timestamp="20210418 16:03:17.160" level="INFO">${FAKERNAME} = John</msg>
+<status status="PASS" starttime="20210418 16:03:17.159" endtime="20210418 16:03:17.160"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${FAKERLASTNAME}</var>
+<msg timestamp="20210418 16:03:17.161" level="INFO">${FAKERLASTNAME} = Stone</msg>
+<status status="PASS" starttime="20210418 16:03:17.160" endtime="20210418 16:03:17.161"/>
+</kw>
+<kw name="Free Email" library="FakerLibrary">
+<var>${FAKEREMAIL}</var>
+<msg timestamp="20210418 16:03:17.162" level="INFO">${FAKEREMAIL} = joelharris@hotmail.com</msg>
+<status status="PASS" starttime="20210418 16:03:17.162" endtime="20210418 16:03:17.163"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${FAKERPASSWORD}</var>
+<arg>length=10</arg>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20210418 16:03:17.164" level="INFO">${FAKERPASSWORD} = Xw4YwGxfO*</msg>
+<status status="PASS" starttime="20210418 16:03:17.163" endtime="20210418 16:03:17.164"/>
+</kw>
+<kw name="Date Of Birth" library="FakerLibrary">
+<var>${FAKERDATEOFBIRTH}</var>
+<arg>minimum_age=18</arg>
+<doc>Generate a random date of birth represented as a Date object,
+constrained by optional miminimum_age and maximum_age
+parameters.</doc>
+<msg timestamp="20210418 16:03:17.165" level="INFO">${FAKERDATEOFBIRTH} = 1965-03-22</msg>
+<status status="PASS" starttime="20210418 16:03:17.164" endtime="20210418 16:03:17.165"/>
+</kw>
+<kw name="Phone Number" library="FakerLibrary">
+<var>${FAKERPHONE}</var>
+<msg timestamp="20210418 16:03:17.166" level="INFO">${FAKERPHONE} = 787-740-5174</msg>
+<status status="PASS" starttime="20210418 16:03:17.165" endtime="20210418 16:03:17.166"/>
+</kw>
+<kw name="Street Address" library="FakerLibrary">
+<var>${FAKERADRESS}</var>
+<doc>:example '791 Crist Parks'</doc>
+<msg timestamp="20210418 16:03:17.167" level="INFO">${FAKERADRESS} = 23787 Dana Stream Suite 414</msg>
+<status status="PASS" starttime="20210418 16:03:17.166" endtime="20210418 16:03:17.167"/>
+</kw>
+<kw name="Zipcode" library="FakerLibrary">
+<var>${FAKERZIP}</var>
+<msg timestamp="20210418 16:03:17.168" level="INFO">${FAKERZIP} = 49038</msg>
+<status status="PASS" starttime="20210418 16:03:17.167" endtime="20210418 16:03:17.168"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>&amp;{DICT}</arg>
+<arg>name=${FAKERNAME}</arg>
+<arg>lastName=${FAKERLASTNAME}</arg>
+<arg>email=${FAKEREMAIL}</arg>
+<arg>password=${FAKERPASSWORD}</arg>
+<arg>dateOfBirth=${FAKERDATEOFBIRTH}</arg>
+<arg>phone=${FAKERPHONE}</arg>
+<arg>address=${FAKERADRESS}</arg>
+<arg>zipCode=${FAKERZIP}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20210418 16:03:17.169" level="INFO">&amp;{DICT} = { name=John | lastName=Stone | email=joelharris@hotmail.com | password=Xw4YwGxfO* | dateOfBirth=1965-03-22 | phone=787-740-5174 | address=23787 Dana Stream Suite 414 | zipCode=49038 }</msg>
+<status status="PASS" starttime="20210418 16:03:17.168" endtime="20210418 16:03:17.170"/>
+</kw>
+<status status="PASS" starttime="20210418 16:03:17.159" endtime="20210418 16:03:17.170"/>
+</kw>
+<kw name="When I submit my data" library="firstPage">
+<kw name="Fill Registration Fields" library="firstPage">
+<arg>${DICT}[name]</arg>
+<arg>${DICT}[email]</arg>
+<arg>${DICT}[password]</arg>
+<arg>${DICT}[dateOfBirth]</arg>
+<arg>${DICT}[phone]</arg>
+<arg>${DICT}[address]</arg>
+<arg>home</arg>
+<arg>Male</arg>
+<arg>1</arg>
+<arg>50</arg>
+<arg>5940</arg>
+<arg>${DICT}[zipCode]</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${userNameText}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210418 16:03:17.172" level="INFO">Typing text 'John' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20210418 16:03:17.171" endtime="20210418 16:03:17.242"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${emailText}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210418 16:03:17.243" level="INFO">Typing text 'joelharris@hotmail.com' into text field 'name:fld_email'.</msg>
+<status status="PASS" starttime="20210418 16:03:17.242" endtime="20210418 16:03:17.329"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${passwordText}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210418 16:03:17.330" level="INFO">Typing text 'Xw4YwGxfO*' into text field 'name:fld_password'.</msg>
+<status status="PASS" starttime="20210418 16:03:17.329" endtime="20210418 16:03:17.408"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${passwordConfirmationText}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210418 16:03:17.409" level="INFO">Typing text 'Xw4YwGxfO*' into text field 'name:fld_cpassword'.</msg>
+<status status="PASS" starttime="20210418 16:03:17.408" endtime="20210418 16:03:17.485"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${dateOfBithText}</arg>
+<arg>${dateOfBirth}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210418 16:03:17.486" level="INFO">Typing text '1965-03-22' into text field 'name:dob'.</msg>
+<status status="PASS" starttime="20210418 16:03:17.485" endtime="20210418 16:03:17.591"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${calendarIcon}</arg>
+<arg>Tab</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210418 16:03:17.593" level="INFO">Sending key(s) ('Tab',) to css:i.fa-calendar-o element.</msg>
+<msg timestamp="20210418 16:03:17.871" level="INFO">Sending keys Tab</msg>
+<status status="PASS" starttime="20210418 16:03:17.592" endtime="20210418 16:03:17.875"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${phoneText}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210418 16:03:17.876" level="INFO">Typing text '787-740-5174' into text field 'name:phone'.</msg>
+<status status="PASS" starttime="20210418 16:03:17.875" endtime="20210418 16:03:17.933"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${addressText}</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210418 16:03:17.934" level="INFO">Typing text '23787 Dana Stream Suite 414' into text field 'name:address'.</msg>
+<status status="PASS" starttime="20210418 16:03:17.933" endtime="20210418 16:03:18.002"/>
+</kw>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<arg>${addressTypeRadio}</arg>
+<arg>${addressType}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<msg timestamp="20210418 16:03:18.003" level="INFO">Selecting 'home' from radio button 'add_type'.</msg>
+<status status="PASS" starttime="20210418 16:03:18.002" endtime="20210418 16:03:18.108"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${genderDropdown}</arg>
+<arg>${gender}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210418 16:03:18.109" level="INFO">Selecting options from selection list 'name:sex' by label Male.</msg>
+<status status="PASS" starttime="20210418 16:03:18.108" endtime="20210418 16:03:18.161"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>${countryDropdown}</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20210418 16:03:18.162" level="INFO">Selecting options from selection list 'name:country' by index 1.</msg>
+<status status="PASS" starttime="20210418 16:03:18.161" endtime="20210418 16:03:18.247"/>
+</kw>
+<kw name="Wait Until Element Does Not Contain" library="SeleniumLibrary">
+<arg>${stateDropdown}</arg>
+<arg>Please wait for 3 seconds</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` does not contain ``text``.</doc>
+<status status="PASS" starttime="20210418 16:03:18.247" endtime="20210418 16:03:18.269"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${stateDropdown}</arg>
+<arg>${state}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210418 16:03:18.271" level="INFO">Selecting options from selection list 'name:state' by value 50.</msg>
+<status status="PASS" starttime="20210418 16:03:18.270" endtime="20210418 16:03:22.465"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${cityDropdown}</arg>
+<arg>${city}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20210418 16:03:22.466" level="INFO">Selecting options from selection list 'name:city' by value 5940.</msg>
+<status status="PASS" starttime="20210418 16:03:22.466" endtime="20210418 16:03:25.797"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${zipcodeText}</arg>
+<arg>${zipCode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210418 16:03:25.798" level="INFO">Typing text '49038' into text field 'name:zip'.</msg>
+<status status="PASS" starttime="20210418 16:03:25.797" endtime="20210418 16:03:25.855"/>
+</kw>
+<status status="PASS" starttime="20210418 16:03:17.170" endtime="20210418 16:03:25.855"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${termsCheck}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210418 16:03:25.856" level="INFO">Selecting checkbox 'name:terms'.</msg>
+<status status="PASS" starttime="20210418 16:03:25.856" endtime="20210418 16:03:25.909"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>${termsCheck}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<msg timestamp="20210418 16:03:25.909" level="INFO">Verifying checkbox 'name:terms' is selected.</msg>
+<status status="PASS" starttime="20210418 16:03:25.909" endtime="20210418 16:03:25.928"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210418 16:03:26.235" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-130.png"&gt;&lt;img src="selenium-screenshot-130.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210418 16:03:25.928" endtime="20210418 16:03:26.235"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${signUpButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="FAIL" starttime="20210418 16:03:34.518" endtime="20210418 16:03:34.519"/>
+</kw>
+<msg timestamp="20210418 16:03:26.235" level="INFO">Clicking button 'css:input[value='Sign up']'.</msg>
+<msg timestamp="20210418 16:03:34.519" level="FAIL">Test timeout 20 seconds exceeded.</msg>
+<msg timestamp="20210418 16:03:34.519" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Test timeout 20 seconds exceeded.</msg>
+<msg timestamp="20210418 16:03:34.520" level="FAIL">Test timeout 20 seconds exceeded.</msg>
+<status status="FAIL" starttime="20210418 16:03:26.235" endtime="20210418 16:03:34.520"/>
+</kw>
+<status status="FAIL" starttime="20210418 16:03:17.170" endtime="20210418 16:03:34.520"/>
+</kw>
+<kw name="Then I must see the message &quot;User is successfully Register. Now You can Login&quot;" library="firstPage" sourcename="Then I must see the message &quot;${message}&quot;">
+<status status="NOT RUN" starttime="20210418 16:03:34.520" endtime="20210418 16:03:34.520"/>
+</kw>
+<kw name="Finish Session" library="Hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210418 16:03:34.849" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-131.png"&gt;&lt;img src="selenium-screenshot-131.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210418 16:03:34.521" endtime="20210418 16:03:34.849"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210418 16:03:34.849" endtime="20210418 16:03:36.901"/>
+</kw>
+<status status="PASS" starttime="20210418 16:03:34.521" endtime="20210418 16:03:36.901"/>
+</kw>
+<doc>This Scenario will check new users registration</doc>
+<timeout value="20 seconds"/>
+<status status="FAIL" starttime="20210418 16:03:10.205" endtime="20210418 16:03:36.902">Test timeout 20 seconds exceeded.</status>
+</test>
+<doc>Check for New users</doc>
+<status status="FAIL" starttime="20210418 16:03:09.691" endtime="20210418 16:03:36.904"/>
+</suite>
+<status status="FAIL" starttime="20210418 16:03:09.674" endtime="20210418 16:03:36.906"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="TC001 New users">Tests.TC001 New users</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210418 16:03:34.519" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Test timeout 20 seconds exceeded.</msg>
+</errors>
+</robot>
